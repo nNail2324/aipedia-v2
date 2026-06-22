@@ -1,0 +1,30 @@
+@keyframes logo {
+    0% {
+        content: '\00A0';
+    }
+
+    100% {
+        content: '.';
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.logo {
+    font-family: var(--logo-font);
+    font-size: var(--logo-font-size);
+    font-weight: var(--regular-font-weight);
+    text-transform: lowercase;
+}
+
+.logo::before {
+    content: '\00A0';
+}
+
+.logo:hover::before {
+    animation: logo 1s infinite linear;
+}

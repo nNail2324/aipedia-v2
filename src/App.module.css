@@ -1,0 +1,7 @@
+.app {
+    font-family: var(--main-font);
+    font-weight: var(--regular-font-weight);
+    font-size: var(--main-font-size);
+    text-transform: uppercase;
+    color: var(--text-color);
+}

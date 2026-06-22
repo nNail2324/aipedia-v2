@@ -1,0 +1,88 @@
+.form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fieldset {
+    inline-size: 100%;
+    block-size: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fieldset:last-child {
+    justify-content: flex-end;
+}
+
+.fieldsetTitle {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    white-space: nowrap;
+}
+
+.fieldsetGenerationTypes {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.fieldsetLabel {
+    display: flex;
+    align-items: center;
+    block-size: fit-content;
+}
+
+.fieldsetLabel:has(:focus-visible) {
+    outline: 1px solid var(--border-color);
+    outline-offset: 1px;
+}
+
+.fieldsetTextfield {
+    inline-size: clamp(9.375rem, -4.9107rem + 29.7619vw, 21.875rem); /* 150px - 350px (768px - 1440px) */
+    block-size: 100%;
+    font-size: var(--search-font-size);
+    color: var(--text-color);
+    background-color: transparent;
+    border: none;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    appearance: none;
+}
+
+.fieldsetTextfield:focus {
+    outline: none;
+    border: none;
+}
+
+.fieldsetPseudoCheckbox {
+    cursor: pointer;
+    transition: border-color 0.3s ease-out, color 0.3s ease-out;
+}
+
+.fieldsetCheckbox:checked ~ .fieldsetPseudoCheckbox {
+    background-color: var(--white);
+    color: var(--dark-grey);
+}
+
+.fieldsetPseudoCheckbox:hover {
+    border-color: var(--border-hover-color);
+}
+
+.generationType {
+    padding: 0 7px;
+    font-size: var(--type-font-size);
+    border: 1px solid var(--border-color);
+}
+
+.visuallyHidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}

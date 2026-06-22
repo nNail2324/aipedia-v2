@@ -1,0 +1,71 @@
+.cardListItem {
+    list-style: none;
+}
+
+.card {
+    block-size: clamp(9.375rem, 5.8036rem + 7.4405vw, 12.5rem); /* 150px - 200px (768px - 1440px) */
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-template-rows: min-content 1fr min-content;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.title {
+    grid-column: 1;
+    grid-row: 1;
+    font-weight: 500;
+    font-size: var(--card-title-font-size);
+}
+
+.vpn {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: var(--card-text-font-size);
+}
+
+.generationTypeList {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    display: flex;
+    gap: 5px;
+}
+
+.limitationText {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: center;
+    font-size: var(--card-text-font-size);
+}
+
+.button {
+    inline-size: fit-content;
+    justify-self: end;
+    grid-column: 2;
+    grid-row: 3;
+    padding: 3px 25px;
+    border: 1px solid var(--border-color);
+    text-decoration: none;
+    text-align: center;
+    font-size: var(--card-text-font-size);
+    color: var(--text-color);
+    background-color: transparent;
+    transition: color 0.3s ease-out, border-color 0.3s ease-out;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:focus-visible {
+    outline: 1px solid var(--border-color);
+}
+
+.button:hover {
+    border-color: var(--border-hover-color);
+}
+
+.button:active {
+    background-color: var(--white);
+    color: var(--dark-grey);
+}

@@ -1,0 +1,8 @@
+.generationType {
+    block-size: fit-content;
+    list-style: none;
+    padding: 0 7px;
+    font-size: var(--type-font-size);
+    border: 1px solid var(--border-color);
+
+}
