@@ -5,3 +5,10 @@
     text-transform: uppercase;
     color: var(--text-color);
 }
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px clamp(6.25rem, 2.6786rem + 7.4405vw, 9.375rem); /* 100px - 150px (768px - 1440px) */
+}

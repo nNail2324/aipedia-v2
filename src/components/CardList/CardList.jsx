@@ -6,7 +6,7 @@ export const CardList = function({cards}) {
         <ul className={styles.cardList}>
             {
               cards.map((card) => (
-                <Card title={card.title} vpn={card.vpn} limitationText={card.limitationText} generationTypeList={card.generationTypeList} />
+                <Card key={card.id} title={card.title} vpn={card.vpn} limitationText={card.limitationText} generationTypeList={card.generationTypeList} />
               ))  
             }
         </ul>

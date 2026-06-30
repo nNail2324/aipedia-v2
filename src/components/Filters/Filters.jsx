@@ -1,6 +1,16 @@
 import styles from './Filters.module.css'
 
-export const Filters = () => {
+export const Filters = function Filters({searchQuery, setSearchQuery, generationType, setGenerationType}) {
+    const handleCheckbox = (event) => {
+        const {value, checked} = event.target;
+
+        if (checked) {
+            setGenerationType([...generationType, value]);
+        } else {
+            setGenerationType(generationType.filter((currentValue) => currentValue !== value));
+        }
+    }
+
     return(
         <form className={styles.form}>
             <fieldset className={styles.fieldset}>
@@ -10,39 +20,49 @@ export const Filters = () => {
                         type="text"
                         placeholder="exampleai"
                         className={styles.fieldsetTextfield}
+                        value={searchQuery}
+                        onChange={(event) => setSearchQuery(event.target.value)}
                     />
                 </label>
             </fieldset>
-            <fieldset className={styles.formFieldset}>
+            <fieldset className={styles.fieldset}>
                 <h2 className={styles.fieldsetTitle}>Форматы</h2>
                 <div className={styles.fieldsetGenerationTypes}>
                     <label className={styles.fieldsetLabel}>
                         <input 
                             type="checkbox"
-                            className={styles.fieldsetCheckbox && styles.visuallyHidden}
+                            value="Текст"
+                            className={`${styles.fieldsetCheckbox} ${styles.visuallyHidden}`}
+                            onChange={(event) => handleCheckbox(event)}
                         />
-                        <span className={styles.fieldsetPseudoCheckbox && styles.generationType}>Текст</span>
+                        <span className={`${styles.fieldsetPseudoCheckbox} && ${styles.generationType}`}>Текст</span>
                     </label>
                     <label className={styles.fieldsetLabel}>
                         <input 
                             type="checkbox"
-                            className={styles.fieldsetCheckbox && styles.visuallyHidden}
+                            value="Изображение"
+                            className={`${styles.fieldsetCheckbox} ${styles.visuallyHidden}`}
+                            onChange={(event) => handleCheckbox(event)}
                         />
-                        <span className={styles.fieldsetPseudoCheckbox && styles.generationType}>Изображение</span>
+                        <span className={`${styles.fieldsetPseudoCheckbox} && ${styles.generationType}`}>Изображение</span>
                     </label>
                     <label className={styles.fieldsetLabel}>
                         <input 
                             type="checkbox"
-                            className={styles.fieldsetCheckbox && styles.visuallyHidden}
+                            value="Видео"
+                            className={`${styles.fieldsetCheckbox} ${styles.visuallyHidden}`}
+                            onChange={(event) => handleCheckbox(event)}
                         />
-                        <span className={styles.fieldsetPseudoCheckbox && styles.generationType}>Видео</span>
+                        <span className={`${styles.fieldsetPseudoCheckbox} && ${styles.generationType}`}>Видео</span>
                     </label>
                     <label className={styles.fieldsetLabel}>
                         <input 
                             type="checkbox"
-                            className={styles.fieldsetCheckbox && styles.visuallyHidden}
+                            value="Аудио"
+                            className={`${styles.fieldsetCheckbox} ${styles.visuallyHidden}`}
+                            onChange={(event) => handleCheckbox(event)}
                         />
-                        <span className={styles.fieldsetPseudoCheckbox && styles.generationType}>Аудио</span>
+                        <span className={`${styles.fieldsetPseudoCheckbox} && ${styles.generationType}`}>Аудио</span>
                     </label>
                 </div>
             </fieldset>

@@ -10,8 +10,8 @@ export const Card = (props) => {
                 <h2 className={styles.title}>{title}</h2>
                 <p className={styles.vpn}>{vpn}</p>
                 <ul className={styles.generationTypeList}>
-                    {generationTypeList.map((type) => (
-                        <GenerationType generationType={type}/>
+                    {generationTypeList.map((type, index) => (
+                        <GenerationType key={index} generationType={type}/>
                     ))}
                 </ul>
                 <p className={styles.limitationText}>{limitationText}</p>
